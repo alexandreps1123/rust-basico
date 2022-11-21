@@ -7,6 +7,13 @@ fn main() {
     let y = 5;
 
     let y = y + 1;
+
+    let spaces = "     ";
+    println!("spaces: {spaces}!");
+
+    let spaces = spaces.len();
+    println!("len spaces: {spaces}!");
+
     println!("The value of x is: {x}");
 
     println!("The const value: {THREE_HOURS_IN_SECONDS}");
