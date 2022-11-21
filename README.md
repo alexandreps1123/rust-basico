@@ -39,3 +39,7 @@ $ cargo check
 
 gerar uma versão release:
 $ cargo build --release
+
+build documentação de todas as dependências locais e abrir no navegador:
+$ cargo doc --open
+
