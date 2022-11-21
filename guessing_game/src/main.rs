@@ -12,33 +12,35 @@ fn main() {
 
     println!("the secret number is: {secret_number}");
 
-    println!("Please input your guess.");
+    loop {
+        println!("Please input your guess.");
 
-    //'let' create a variable, variables are immutable by default
-    //'mut' make a variable mutable
-    //'=' bind a value to the variable
-    //'String::new' function that returns a new instance of a string
-    //'::' indicates that 'new' is an associated function of the 'String' type
-    //'new' create a new, empty string
-    let mut guess = String::new();
+        //'let' create a variable, variables are immutable by default
+        //'mut' make a variable mutable
+        //'=' bind a value to the variable
+        //'String::new' function that returns a new instance of a string
+        //'::' indicates that 'new' is an associated function of the 'String' type
+        //'new' create a new, empty string
+        let mut guess = String::new();
 
-    //'io::stdin' handle with user input
-    //'read_line' get user input
-    //'&' indicates reference
-    //'&mut guess' make reference mutable, to get user input to change the strin's content
-    //'read_line' returns a 'Result' value. 'Result' is a enumeration (enum)
-    //'expect'  if 'Result' is an 'Err' value, 'expect' will crash the program and display the message
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+        //'io::stdin' handle with user input
+        //'read_line' get user input
+        //'&' indicates reference
+        //'&mut guess' make reference mutable, to get user input to change the strin's content
+        //'read_line' returns a 'Result' value. 'Result' is a enumeration (enum)
+        //'expect'  if 'Result' is an 'Err' value, 'expect' will crash the program and display the message
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
 
-    let guess: u32 = guess.trim().parse().expect("Please type a number! ");
-    
-    println!("Your guessed: {guess}");
+        let guess: u32 = guess.trim().parse().expect("Please type a number! ");
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => println!("You win!"),
+        println!("Your guessed: {guess}");
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => println!("You win!"),
+        }
     }
 }
