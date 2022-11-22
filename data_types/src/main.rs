@@ -32,12 +32,26 @@ fn main() {
     println!("{heart_eyed_cat}");
 
     // compound types
-    let tup: (i32, f64, u8) = (500, 6.9, 10);
+        // tuplas
+        let tup: (i32, f64, u8) = (500, 6.9, 10);
 
-    // destructuring: get individual values of a tuple
-    let (x, _y, _z) = tup;
-    println!("{x}");
+        // destructuring: get individual values of a tuple
+        let (x, _y, _z) = tup;
+        println!("{x}");
 
-    let second = tup.1;
-    println!("{second}");
+        let second = tup.1;
+        println!("{second}");
+
+        // array
+        // fixed length
+        let array: [i32; 5] = [1, 2, 3, 4, 5];
+        let array_with_three = [2; 5];
+
+        let mut i = 0;
+        loop {
+            println!("{}", array[i]);
+            println!("{}", array_with_three[i]);
+            i += 1;
+            if i >= array.len() {break};
+        }
 }
