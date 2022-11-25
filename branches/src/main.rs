@@ -2,8 +2,10 @@ fn main() {
     let number = 3;
 
     if number < 5 {
-        println!("condition was true");
+        println!("less than 5");
+    } else if number > 5 && number < 10 {
+        println!("between 5 and 10");
     } else {
-        println!("condition was false");
+        println!("greater or equals 10");
     }
 }
