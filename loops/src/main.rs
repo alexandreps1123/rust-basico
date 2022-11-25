@@ -33,6 +33,12 @@ fn main() {
 
     println!("i = {i}");
 
+    // while loop
+    while i != 0 {
+        println!("{i}!");
+
+        i -= 1;
+    }
     //infinite loop
     //loop {
     //    println!("Hello, world!");
